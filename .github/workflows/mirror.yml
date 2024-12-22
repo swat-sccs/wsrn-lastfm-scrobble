@@ -16,7 +16,7 @@ jobs:
       - uses: action-pack/gitlab-sync@v3
         with:
           # GitLab repo URL
-          url: https://gitlab.sccs.swarthmore.edu/dcrepublic/wsrn-lastfm-scrobble.git
+          url: https://gitlab.sccs.swarthmore.edu/sccs/wsrn-lastfm-scrobble.git
           # GitLab username
           username: mirrorbot
           # GitLab token
