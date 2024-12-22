@@ -12,7 +12,7 @@ services:
         - "traefik.enable=true"
         - "traefik.docker.network=traefik"
         - "traefik.http.routers.wsrn-lastfm-scrobble.entrypoints=https"
-        - "traefik.http.routers.wsrn-lastfm-scrobble.rule=((Host(`admin.wsrnfm.com`) || Host(`www.admin.wsrnfm.com`)) && PathPrefix(`/scrobble/`))"
+        - "traefik.http.routers.wsrn-lastfm-scrobble.rule=((Host(`admin.wsrnfm.com`) || Host(`www.admin.wsrnfm.com`)) && PathPrefix(`/scrobble`))"
         - "traefik.http.routers.wsrn-lastfm-scrobble.tls=true"
         - "traefik.http.routers.wsrn-lastfm-scrobble.tls.certresolver=letsEncrypt"
         - "traefik.http.services.wsrn-lastfm-scrobble.loadbalancer.server.port=5555"
