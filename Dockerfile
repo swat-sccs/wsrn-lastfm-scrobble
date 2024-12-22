@@ -5,6 +5,6 @@ COPY ./requirements.txt ./requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-COPY ./app .
+COPY ./app /app
 
-CMD ["fastapi", "run", "app/endpoint.py", "--port", "5555", "--host", "0.0.0.0"]
+CMD ["fastapi", "run", "/app/endpoint.py", "--port", "5555", "--host", "0.0.0.0"]
