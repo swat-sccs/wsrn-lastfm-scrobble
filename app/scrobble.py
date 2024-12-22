@@ -14,6 +14,8 @@ def scrobble_track(artist, track):
 
     lastfm_network.scrobble(artist=artist, title=track, timestamp=unix_timestamp)
 
+def send_now_playing(artist, title, duration):
+    lastfm_network.update_now_playing(artist=artist, title=title, duration=duration)
 
 
 # End of file

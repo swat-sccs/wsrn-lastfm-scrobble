@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 COPY ./app /app
 
-CMD ["fastapi", "run", "/app/endpoint.py", "--port", "5555", "--host", "0.0.0.0"]
+CMD ["fastapi", "run", "/app/endpoint.py", "--port", "5555", "--host", "0.0.0.0", "--root-path", "/scrobble"]

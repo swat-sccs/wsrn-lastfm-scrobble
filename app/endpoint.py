@@ -1,8 +1,9 @@
 import json
-from fastapi import FastAPI,Request
-from scrobble import scrobble_track
+from fastapi import FastAPI,Request, APIRouter
+from scrobble import scrobble_track,send_now_playing
 from pprint import pprint
 import sys
+
 app = FastAPI()
 
 @app.get("/")
@@ -17,6 +18,7 @@ async def scrobble_item(request: Request):
 
     title = response["now_playing"]["song"]["title"]
     artist = response["now_playing"]["song"]["artist"]
+    duration = response["now_playing"]["duration"]
 
     # Validate
     if len(artist) == 0 and len(title) == 0:
@@ -30,6 +32,7 @@ async def scrobble_item(request: Request):
         return "error"
 
     scrobble_track(artist,title)
+    send_now_playing(artist, title, duration)
 
     return "Success"
 
